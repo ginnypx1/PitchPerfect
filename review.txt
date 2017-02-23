@@ -11,7 +11,8 @@ UINavigationController: 1/1
 Sound Effects: 1/1 "Good job in here."
 Code Quality: 2/3
     Potentially repetitive blocks of code can be abstracted into a useable section.
-    FIXED: Code lines 35-37, and 72-74 have been placed in a new function
+    FIXED: Code lines 35-37, and 72-74 have been placed in a new function, 
+    changeRecordingView
 
 Code Review:
 
