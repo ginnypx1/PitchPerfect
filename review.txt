@@ -25,4 +25,24 @@ func playSoundForButton: "Awesome. Sounds great!"
 RecordSoundsViewController.swift
 
 Required: If you notice in here, these three lines of code (to set the state of the UI elements) is somewhat same as that in lines 35-37 in the above IBAction. Could you please abstract this repetitive code into a method, so as to avoid code repetion?
-FIXED: Implimented new changeRecordingView method in the file
+FIXED: Implimented new changeRecordingView method in the file.
+
+/**********************************************************Second review 2/23/17:
+
+Meets Speciications: "Great job, keep at it!"
+
+Basic Functionality: 2/2
+Actions and Outlets: 2/2
+AVAudioRecorder: 1/1
+Delegates and Segues: 2/2
+UINavigationController: 1/1
+Sound Effects: 1/1 
+Code Quality: 3/3 "Good job in here."
+
+Code Review:
+
+RecordSoundsViewController.swift
+
+func changeRecordingView: "Awesome. Good job in here."
+Suggestion: You can further abstract this method using only one boolean paramater and the ternary conditional operator.
+-- Changes have been implimented in the current version of the project.
