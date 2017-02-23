@@ -26,15 +26,19 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         // disable stopRecording until recording
         stopRecordingButton.isEnabled = false
     }
+    
+    func changeRecordingView(to string: String, recordButtonEnabled: Bool, stopButtonEnabled: Bool) {
+        recordingLabel.text = string
+        recordButton.isEnabled = recordButtonEnabled
+        stopRecordingButton.isEnabled = stopButtonEnabled
+    }
 
     // MARK: - Record and Stop Recording Actions
 
     @IBAction func recordAudio(_ sender: Any) {
         
-        // recording started: change text label, disable recording button, enable stop button
-        recordingLabel.text = "Recording in Progress"
-        stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false
+        // change the display to show we are recording
+        changeRecordingView(to: "Recording in Progress", recordButtonEnabled: false, stopButtonEnabled: true)
         
         // create a file for recording
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
@@ -68,10 +72,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     @IBAction func stopRecording(_ sender: Any) {
         
-        // recording ended: enable record button, disable stop recording and change the text label
-        recordButton.isEnabled = true
-        stopRecordingButton.isEnabled = false
-        recordingLabel.text = "Tap to Record"
+        // change the display to show we have stopped recording
+        changeRecordingView(to: "Tap to Record", recordButtonEnabled: true, stopButtonEnabled: false)
         
         // stop the audio recording
         audioRecorder.stop()
