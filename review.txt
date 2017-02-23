@@ -1,0 +1,27 @@
+Initial review 2/23/17:
+
+-- REQUIRES CHANGES: must allow permission for the microphone in Info.plist + Privacy - Microphone Usage Description "The app needs to use the microphone."
+    ** FIXED: This was the first time I've actually deployed an app to my own phone.
+
+Basic Functionality: 2/2
+Actions and Outlets: 2/2 "Good job!"
+AVAudioRecorder: 1/1
+Delegates and Segues: 2/2
+UINavigationController: 1/1
+Sound Effects: 1/1 "Good job in here."
+Code Quality: 2/3
+    Potentially repetitive blocks of code can be abstracted into a useable section.
+    FIXED: Code lines 35-37, and 72-74 have been placed in a new function
+
+Code Review:
+
+PlaySoundsViewController.swift
+
+Suggestion: The audio effect buttons look a bit squished while in landscape orientation on smaller iPhones, like SE.
+    FIXED: by appling new Compact, Compact rules in the main.storyboard
+func playSoundForButton: "Awesome. Sounds great!"
+
+RecordSoundsViewController.swift
+
+Required: If you notice in here, these three lines of code (to set the state of the UI elements) is somewhat same as that in lines 35-37 in the above IBAction. Could you please abstract this repetitive code into a method, so as to avoid code repetion?
+FIXED: Implimented new changeRecordingView method in the file
